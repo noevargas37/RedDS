@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteOUT.master.cs" Inherits="WebRedDS.SiteOUT" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="librerias/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="librerias/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="librerias/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="librerias/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="librerias/css/pace.min.css" rel="stylesheet" />
+	<script src="librerias/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="librerias/css/bootstrap.min.css" rel="stylesheet">
+	<link href="librerias/css/app.css" rel="stylesheet">
+	<link href="librerias/css/icons.css" rel="stylesheet">
+	<title>Red DS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-login">
+	<!--wrapper-->
+	<div class="wrapper">
+		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+			<div class="container-fluid">
+				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+					<div class="col mx-auto">
+						<div class="mb-4 text-center">
+							<img src="librerias/images/logo-img.png" width="180" alt="" />
+						</div>
+						    <form id="form1" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+					</div>
+				</div>
+				<!--end row-->
+			</div>
+		</div>
+	</div>
+	<!--end wrapper-->
+	<!-- Bootstrap JS -->
+	<script src="librerias/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="librerias/js/jquery.min.js"></script>
+	<script src="librerias/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="librerias/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="librerias/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<!--Password show & hide js -->
+	
+	<!--app JS-->
+	<script src="../librerias/js/app.js"></script>
+
+
+</body>
+</html>

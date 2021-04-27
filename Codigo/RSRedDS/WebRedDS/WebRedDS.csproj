@@ -1,0 +1,1476 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E11FA4F6-B67A-47C6-8808-0EE6C2672A2B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebRedDS</RootNamespace>
+    <AssemblyName>WebRedDS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app-chat-box.aspx" />
+    <Content Include="app-contact-list.aspx" />
+    <Content Include="app-emailbox.aspx" />
+    <Content Include="app-emailread.aspx" />
+    <Content Include="app-file-manager.aspx" />
+    <Content Include="app-fullcalendar.aspx" />
+    <Content Include="app-invoice.aspx" />
+    <Content Include="app-to-do.aspx" />
+    <Content Include="authentication\forgot-password.aspx" />
+    <Content Include="authentication\lock-screen.aspx" />
+    <Content Include="authentication\reset-password.aspx" />
+    <Content Include="charts-apex-chart.aspx" />
+    <Content Include="charts-chartjs.aspx" />
+    <Content Include="charts-highcharts.aspx" />
+    <Content Include="component-accordions.aspx" />
+    <Content Include="component-alerts.aspx" />
+    <Content Include="component-avtars-chips.aspx" />
+    <Content Include="component-badges.aspx" />
+    <Content Include="component-buttons.aspx" />
+    <Content Include="component-cards.aspx" />
+    <Content Include="component-carousels.aspx" />
+    <Content Include="component-list-groups.aspx" />
+    <Content Include="component-media-object.aspx" />
+    <Content Include="component-modals.aspx" />
+    <Content Include="component-navbar.aspx" />
+    <Content Include="component-navs-tabs.aspx" />
+    <Content Include="component-notifications.aspx" />
+    <Content Include="component-paginations.aspx" />
+    <Content Include="component-popovers-tooltips.aspx" />
+    <Content Include="component-progress-bars.aspx" />
+    <Content Include="component-spinners.aspx" />
+    <Content Include="content-grid-system.aspx" />
+    <Content Include="content-text-utilities.aspx" />
+    <Content Include="content-typography.aspx" />
+    <Content Include="ecommerce-add-new-products.aspx" />
+    <Content Include="ecommerce-orders.aspx" />
+    <Content Include="ecommerce-products-details.aspx" />
+    <Content Include="ecommerce-products.aspx" />
+    <Content Include="error-blank-page.aspx" />
+    <Content Include="errors-404-error.aspx" />
+    <Content Include="errors-500-error.aspx" />
+    <Content Include="errors-coming-soon.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="form-date-time-pickes.aspx" />
+    <Content Include="form-elements.aspx" />
+    <Content Include="form-file-upload.aspx" />
+    <Content Include="form-input-group.aspx" />
+    <Content Include="form-layouts.aspx" />
+    <Content Include="form-select2.aspx" />
+    <Content Include="form-text-editor.aspx" />
+    <Content Include="form-validations.aspx" />
+    <Content Include="form-wizard.aspx" />
+    <Content Include="icons-boxicons.aspx" />
+    <Content Include="icons-feather-icons.aspx" />
+    <Content Include="icons-line-icons.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="index2.aspx" />
+    <Content Include="librerias\css\app.css" />
+    <Content Include="librerias\css\bootstrap.min.css" />
+    <Content Include="librerias\css\dark-theme.css" />
+    <Content Include="librerias\css\header-colors.css" />
+    <Content Include="librerias\css\icons.css" />
+    <Content Include="librerias\css\pace.min.css" />
+    <Content Include="librerias\css\semi-dark.css" />
+    <Content Include="librerias\flags\1x1\ad.svg" />
+    <Content Include="librerias\flags\1x1\ae.svg" />
+    <Content Include="librerias\flags\1x1\af.svg" />
+    <Content Include="librerias\flags\1x1\ag.svg" />
+    <Content Include="librerias\flags\1x1\ai.svg" />
+    <Content Include="librerias\flags\1x1\al.svg" />
+    <Content Include="librerias\flags\1x1\am.svg" />
+    <Content Include="librerias\flags\1x1\ao.svg" />
+    <Content Include="librerias\flags\1x1\aq.svg" />
+    <Content Include="librerias\flags\1x1\ar.svg" />
+    <Content Include="librerias\flags\1x1\as.svg" />
+    <Content Include="librerias\flags\1x1\at.svg" />
+    <Content Include="librerias\flags\1x1\au.svg" />
+    <Content Include="librerias\flags\1x1\aw.svg" />
+    <Content Include="librerias\flags\1x1\ax.svg" />
+    <Content Include="librerias\flags\1x1\az.svg" />
+    <Content Include="librerias\flags\1x1\ba.svg" />
+    <Content Include="librerias\flags\1x1\bb.svg" />
+    <Content Include="librerias\flags\1x1\bd.svg" />
+    <Content Include="librerias\flags\1x1\be.svg" />
+    <Content Include="librerias\flags\1x1\bf.svg" />
+    <Content Include="librerias\flags\1x1\bg.svg" />
+    <Content Include="librerias\flags\1x1\bh.svg" />
+    <Content Include="librerias\flags\1x1\bi.svg" />
+    <Content Include="librerias\flags\1x1\bj.svg" />
+    <Content Include="librerias\flags\1x1\bl.svg" />
+    <Content Include="librerias\flags\1x1\bm.svg" />
+    <Content Include="librerias\flags\1x1\bn.svg" />
+    <Content Include="librerias\flags\1x1\bo.svg" />
+    <Content Include="librerias\flags\1x1\bq.svg" />
+    <Content Include="librerias\flags\1x1\br.svg" />
+    <Content Include="librerias\flags\1x1\bs.svg" />
+    <Content Include="librerias\flags\1x1\bt.svg" />
+    <Content Include="librerias\flags\1x1\bv.svg" />
+    <Content Include="librerias\flags\1x1\bw.svg" />
+    <Content Include="librerias\flags\1x1\by.svg" />
+    <Content Include="librerias\flags\1x1\bz.svg" />
+    <Content Include="librerias\flags\1x1\ca.svg" />
+    <Content Include="librerias\flags\1x1\cc.svg" />
+    <Content Include="librerias\flags\1x1\cd.svg" />
+    <Content Include="librerias\flags\1x1\cf.svg" />
+    <Content Include="librerias\flags\1x1\cg.svg" />
+    <Content Include="librerias\flags\1x1\ch.svg" />
+    <Content Include="librerias\flags\1x1\ci.svg" />
+    <Content Include="librerias\flags\1x1\ck.svg" />
+    <Content Include="librerias\flags\1x1\cl.svg" />
+    <Content Include="librerias\flags\1x1\cm.svg" />
+    <Content Include="librerias\flags\1x1\cn.svg" />
+    <Content Include="librerias\flags\1x1\co.svg" />
+    <Content Include="librerias\flags\1x1\cr.svg" />
+    <Content Include="librerias\flags\1x1\cu.svg" />
+    <Content Include="librerias\flags\1x1\cv.svg" />
+    <Content Include="librerias\flags\1x1\cw.svg" />
+    <Content Include="librerias\flags\1x1\cx.svg" />
+    <Content Include="librerias\flags\1x1\cy.svg" />
+    <Content Include="librerias\flags\1x1\cz.svg" />
+    <Content Include="librerias\flags\1x1\de.svg" />
+    <Content Include="librerias\flags\1x1\dj.svg" />
+    <Content Include="librerias\flags\1x1\dk.svg" />
+    <Content Include="librerias\flags\1x1\dm.svg" />
+    <Content Include="librerias\flags\1x1\do.svg" />
+    <Content Include="librerias\flags\1x1\dz.svg" />
+    <Content Include="librerias\flags\1x1\ec.svg" />
+    <Content Include="librerias\flags\1x1\ee.svg" />
+    <Content Include="librerias\flags\1x1\eg.svg" />
+    <Content Include="librerias\flags\1x1\eh.svg" />
+    <Content Include="librerias\flags\1x1\er.svg" />
+    <Content Include="librerias\flags\1x1\es-ct.svg" />
+    <Content Include="librerias\flags\1x1\es.svg" />
+    <Content Include="librerias\flags\1x1\et.svg" />
+    <Content Include="librerias\flags\1x1\eu.svg" />
+    <Content Include="librerias\flags\1x1\fi.svg" />
+    <Content Include="librerias\flags\1x1\fj.svg" />
+    <Content Include="librerias\flags\1x1\fk.svg" />
+    <Content Include="librerias\flags\1x1\fm.svg" />
+    <Content Include="librerias\flags\1x1\fo.svg" />
+    <Content Include="librerias\flags\1x1\fr.svg" />
+    <Content Include="librerias\flags\1x1\ga.svg" />
+    <Content Include="librerias\flags\1x1\gb-eng.svg" />
+    <Content Include="librerias\flags\1x1\gb-nir.svg" />
+    <Content Include="librerias\flags\1x1\gb-sct.svg" />
+    <Content Include="librerias\flags\1x1\gb-wls.svg" />
+    <Content Include="librerias\flags\1x1\gb.svg" />
+    <Content Include="librerias\flags\1x1\gd.svg" />
+    <Content Include="librerias\flags\1x1\ge.svg" />
+    <Content Include="librerias\flags\1x1\gf.svg" />
+    <Content Include="librerias\flags\1x1\gg.svg" />
+    <Content Include="librerias\flags\1x1\gh.svg" />
+    <Content Include="librerias\flags\1x1\gi.svg" />
+    <Content Include="librerias\flags\1x1\gl.svg" />
+    <Content Include="librerias\flags\1x1\gm.svg" />
+    <Content Include="librerias\flags\1x1\gn.svg" />
+    <Content Include="librerias\flags\1x1\gp.svg" />
+    <Content Include="librerias\flags\1x1\gq.svg" />
+    <Content Include="librerias\flags\1x1\gr.svg" />
+    <Content Include="librerias\flags\1x1\gs.svg" />
+    <Content Include="librerias\flags\1x1\gt.svg" />
+    <Content Include="librerias\flags\1x1\gu.svg" />
+    <Content Include="librerias\flags\1x1\gw.svg" />
+    <Content Include="librerias\flags\1x1\gy.svg" />
+    <Content Include="librerias\flags\1x1\hk.svg" />
+    <Content Include="librerias\flags\1x1\hm.svg" />
+    <Content Include="librerias\flags\1x1\hn.svg" />
+    <Content Include="librerias\flags\1x1\hr.svg" />
+    <Content Include="librerias\flags\1x1\ht.svg" />
+    <Content Include="librerias\flags\1x1\hu.svg" />
+    <Content Include="librerias\flags\1x1\id.svg" />
+    <Content Include="librerias\flags\1x1\ie.svg" />
+    <Content Include="librerias\flags\1x1\il.svg" />
+    <Content Include="librerias\flags\1x1\im.svg" />
+    <Content Include="librerias\flags\1x1\in.svg" />
+    <Content Include="librerias\flags\1x1\io.svg" />
+    <Content Include="librerias\flags\1x1\iq.svg" />
+    <Content Include="librerias\flags\1x1\ir.svg" />
+    <Content Include="librerias\flags\1x1\is.svg" />
+    <Content Include="librerias\flags\1x1\it.svg" />
+    <Content Include="librerias\flags\1x1\je.svg" />
+    <Content Include="librerias\flags\1x1\jm.svg" />
+    <Content Include="librerias\flags\1x1\jo.svg" />
+    <Content Include="librerias\flags\1x1\jp.svg" />
+    <Content Include="librerias\flags\1x1\ke.svg" />
+    <Content Include="librerias\flags\1x1\kg.svg" />
+    <Content Include="librerias\flags\1x1\kh.svg" />
+    <Content Include="librerias\flags\1x1\ki.svg" />
+    <Content Include="librerias\flags\1x1\km.svg" />
+    <Content Include="librerias\flags\1x1\kn.svg" />
+    <Content Include="librerias\flags\1x1\kp.svg" />
+    <Content Include="librerias\flags\1x1\kr.svg" />
+    <Content Include="librerias\flags\1x1\kw.svg" />
+    <Content Include="librerias\flags\1x1\ky.svg" />
+    <Content Include="librerias\flags\1x1\kz.svg" />
+    <Content Include="librerias\flags\1x1\la.svg" />
+    <Content Include="librerias\flags\1x1\lb.svg" />
+    <Content Include="librerias\flags\1x1\lc.svg" />
+    <Content Include="librerias\flags\1x1\li.svg" />
+    <Content Include="librerias\flags\1x1\lk.svg" />
+    <Content Include="librerias\flags\1x1\lr.svg" />
+    <Content Include="librerias\flags\1x1\ls.svg" />
+    <Content Include="librerias\flags\1x1\lt.svg" />
+    <Content Include="librerias\flags\1x1\lu.svg" />
+    <Content Include="librerias\flags\1x1\lv.svg" />
+    <Content Include="librerias\flags\1x1\ly.svg" />
+    <Content Include="librerias\flags\1x1\ma.svg" />
+    <Content Include="librerias\flags\1x1\mc.svg" />
+    <Content Include="librerias\flags\1x1\md.svg" />
+    <Content Include="librerias\flags\1x1\me.svg" />
+    <Content Include="librerias\flags\1x1\mf.svg" />
+    <Content Include="librerias\flags\1x1\mg.svg" />
+    <Content Include="librerias\flags\1x1\mh.svg" />
+    <Content Include="librerias\flags\1x1\mk.svg" />
+    <Content Include="librerias\flags\1x1\ml.svg" />
+    <Content Include="librerias\flags\1x1\mm.svg" />
+    <Content Include="librerias\flags\1x1\mn.svg" />
+    <Content Include="librerias\flags\1x1\mo.svg" />
+    <Content Include="librerias\flags\1x1\mp.svg" />
+    <Content Include="librerias\flags\1x1\mq.svg" />
+    <Content Include="librerias\flags\1x1\mr.svg" />
+    <Content Include="librerias\flags\1x1\ms.svg" />
+    <Content Include="librerias\flags\1x1\mt.svg" />
+    <Content Include="librerias\flags\1x1\mu.svg" />
+    <Content Include="librerias\flags\1x1\mv.svg" />
+    <Content Include="librerias\flags\1x1\mw.svg" />
+    <Content Include="librerias\flags\1x1\mx.svg" />
+    <Content Include="librerias\flags\1x1\my.svg" />
+    <Content Include="librerias\flags\1x1\mz.svg" />
+    <Content Include="librerias\flags\1x1\na.svg" />
+    <Content Include="librerias\flags\1x1\nc.svg" />
+    <Content Include="librerias\flags\1x1\ne.svg" />
+    <Content Include="librerias\flags\1x1\nf.svg" />
+    <Content Include="librerias\flags\1x1\ng.svg" />
+    <Content Include="librerias\flags\1x1\ni.svg" />
+    <Content Include="librerias\flags\1x1\nl.svg" />
+    <Content Include="librerias\flags\1x1\no.svg" />
+    <Content Include="librerias\flags\1x1\np.svg" />
+    <Content Include="librerias\flags\1x1\nr.svg" />
+    <Content Include="librerias\flags\1x1\nu.svg" />
+    <Content Include="librerias\flags\1x1\nz.svg" />
+    <Content Include="librerias\flags\1x1\om.svg" />
+    <Content Include="librerias\flags\1x1\pa.svg" />
+    <Content Include="librerias\flags\1x1\pe.svg" />
+    <Content Include="librerias\flags\1x1\pf.svg" />
+    <Content Include="librerias\flags\1x1\pg.svg" />
+    <Content Include="librerias\flags\1x1\ph.svg" />
+    <Content Include="librerias\flags\1x1\pk.svg" />
+    <Content Include="librerias\flags\1x1\pl.svg" />
+    <Content Include="librerias\flags\1x1\pm.svg" />
+    <Content Include="librerias\flags\1x1\pn.svg" />
+    <Content Include="librerias\flags\1x1\pr.svg" />
+    <Content Include="librerias\flags\1x1\ps.svg" />
+    <Content Include="librerias\flags\1x1\pt.svg" />
+    <Content Include="librerias\flags\1x1\pw.svg" />
+    <Content Include="librerias\flags\1x1\py.svg" />
+    <Content Include="librerias\flags\1x1\qa.svg" />
+    <Content Include="librerias\flags\1x1\re.svg" />
+    <Content Include="librerias\flags\1x1\ro.svg" />
+    <Content Include="librerias\flags\1x1\rs.svg" />
+    <Content Include="librerias\flags\1x1\ru.svg" />
+    <Content Include="librerias\flags\1x1\rw.svg" />
+    <Content Include="librerias\flags\1x1\sa.svg" />
+    <Content Include="librerias\flags\1x1\sb.svg" />
+    <Content Include="librerias\flags\1x1\sc.svg" />
+    <Content Include="librerias\flags\1x1\sd.svg" />
+    <Content Include="librerias\flags\1x1\se.svg" />
+    <Content Include="librerias\flags\1x1\sg.svg" />
+    <Content Include="librerias\flags\1x1\sh.svg" />
+    <Content Include="librerias\flags\1x1\si.svg" />
+    <Content Include="librerias\flags\1x1\sj.svg" />
+    <Content Include="librerias\flags\1x1\sk.svg" />
+    <Content Include="librerias\flags\1x1\sl.svg" />
+    <Content Include="librerias\flags\1x1\sm.svg" />
+    <Content Include="librerias\flags\1x1\sn.svg" />
+    <Content Include="librerias\flags\1x1\so.svg" />
+    <Content Include="librerias\flags\1x1\sr.svg" />
+    <Content Include="librerias\flags\1x1\ss.svg" />
+    <Content Include="librerias\flags\1x1\st.svg" />
+    <Content Include="librerias\flags\1x1\sv.svg" />
+    <Content Include="librerias\flags\1x1\sx.svg" />
+    <Content Include="librerias\flags\1x1\sy.svg" />
+    <Content Include="librerias\flags\1x1\sz.svg" />
+    <Content Include="librerias\flags\1x1\tc.svg" />
+    <Content Include="librerias\flags\1x1\td.svg" />
+    <Content Include="librerias\flags\1x1\tf.svg" />
+    <Content Include="librerias\flags\1x1\tg.svg" />
+    <Content Include="librerias\flags\1x1\th.svg" />
+    <Content Include="librerias\flags\1x1\tj.svg" />
+    <Content Include="librerias\flags\1x1\tk.svg" />
+    <Content Include="librerias\flags\1x1\tl.svg" />
+    <Content Include="librerias\flags\1x1\tm.svg" />
+    <Content Include="librerias\flags\1x1\tn.svg" />
+    <Content Include="librerias\flags\1x1\to.svg" />
+    <Content Include="librerias\flags\1x1\tr.svg" />
+    <Content Include="librerias\flags\1x1\tt.svg" />
+    <Content Include="librerias\flags\1x1\tv.svg" />
+    <Content Include="librerias\flags\1x1\tw.svg" />
+    <Content Include="librerias\flags\1x1\tz.svg" />
+    <Content Include="librerias\flags\1x1\ua.svg" />
+    <Content Include="librerias\flags\1x1\ug.svg" />
+    <Content Include="librerias\flags\1x1\um.svg" />
+    <Content Include="librerias\flags\1x1\un.svg" />
+    <Content Include="librerias\flags\1x1\us.svg" />
+    <Content Include="librerias\flags\1x1\uy.svg" />
+    <Content Include="librerias\flags\1x1\uz.svg" />
+    <Content Include="librerias\flags\1x1\va.svg" />
+    <Content Include="librerias\flags\1x1\vc.svg" />
+    <Content Include="librerias\flags\1x1\ve.svg" />
+    <Content Include="librerias\flags\1x1\vg.svg" />
+    <Content Include="librerias\flags\1x1\vi.svg" />
+    <Content Include="librerias\flags\1x1\vn.svg" />
+    <Content Include="librerias\flags\1x1\vu.svg" />
+    <Content Include="librerias\flags\1x1\wf.svg" />
+    <Content Include="librerias\flags\1x1\ws.svg" />
+    <Content Include="librerias\flags\1x1\ye.svg" />
+    <Content Include="librerias\flags\1x1\yt.svg" />
+    <Content Include="librerias\flags\1x1\za.svg" />
+    <Content Include="librerias\flags\1x1\zm.svg" />
+    <Content Include="librerias\flags\1x1\zw.svg" />
+    <Content Include="librerias\flags\4x3\ad.svg" />
+    <Content Include="librerias\flags\4x3\ae.svg" />
+    <Content Include="librerias\flags\4x3\af.svg" />
+    <Content Include="librerias\flags\4x3\ag.svg" />
+    <Content Include="librerias\flags\4x3\ai.svg" />
+    <Content Include="librerias\flags\4x3\al.svg" />
+    <Content Include="librerias\flags\4x3\am.svg" />
+    <Content Include="librerias\flags\4x3\ao.svg" />
+    <Content Include="librerias\flags\4x3\aq.svg" />
+    <Content Include="librerias\flags\4x3\ar.svg" />
+    <Content Include="librerias\flags\4x3\as.svg" />
+    <Content Include="librerias\flags\4x3\at.svg" />
+    <Content Include="librerias\flags\4x3\au.svg" />
+    <Content Include="librerias\flags\4x3\aw.svg" />
+    <Content Include="librerias\flags\4x3\ax.svg" />
+    <Content Include="librerias\flags\4x3\az.svg" />
+    <Content Include="librerias\flags\4x3\ba.svg" />
+    <Content Include="librerias\flags\4x3\bb.svg" />
+    <Content Include="librerias\flags\4x3\bd.svg" />
+    <Content Include="librerias\flags\4x3\be.svg" />
+    <Content Include="librerias\flags\4x3\bf.svg" />
+    <Content Include="librerias\flags\4x3\bg.svg" />
+    <Content Include="librerias\flags\4x3\bh.svg" />
+    <Content Include="librerias\flags\4x3\bi.svg" />
+    <Content Include="librerias\flags\4x3\bj.svg" />
+    <Content Include="librerias\flags\4x3\bl.svg" />
+    <Content Include="librerias\flags\4x3\bm.svg" />
+    <Content Include="librerias\flags\4x3\bn.svg" />
+    <Content Include="librerias\flags\4x3\bo.svg" />
+    <Content Include="librerias\flags\4x3\bq.svg" />
+    <Content Include="librerias\flags\4x3\br.svg" />
+    <Content Include="librerias\flags\4x3\bs.svg" />
+    <Content Include="librerias\flags\4x3\bt.svg" />
+    <Content Include="librerias\flags\4x3\bv.svg" />
+    <Content Include="librerias\flags\4x3\bw.svg" />
+    <Content Include="librerias\flags\4x3\by.svg" />
+    <Content Include="librerias\flags\4x3\bz.svg" />
+    <Content Include="librerias\flags\4x3\ca.svg" />
+    <Content Include="librerias\flags\4x3\cc.svg" />
+    <Content Include="librerias\flags\4x3\cd.svg" />
+    <Content Include="librerias\flags\4x3\cf.svg" />
+    <Content Include="librerias\flags\4x3\cg.svg" />
+    <Content Include="librerias\flags\4x3\ch.svg" />
+    <Content Include="librerias\flags\4x3\ci.svg" />
+    <Content Include="librerias\flags\4x3\ck.svg" />
+    <Content Include="librerias\flags\4x3\cl.svg" />
+    <Content Include="librerias\flags\4x3\cm.svg" />
+    <Content Include="librerias\flags\4x3\cn.svg" />
+    <Content Include="librerias\flags\4x3\co.svg" />
+    <Content Include="librerias\flags\4x3\cr.svg" />
+    <Content Include="librerias\flags\4x3\cu.svg" />
+    <Content Include="librerias\flags\4x3\cv.svg" />
+    <Content Include="librerias\flags\4x3\cw.svg" />
+    <Content Include="librerias\flags\4x3\cx.svg" />
+    <Content Include="librerias\flags\4x3\cy.svg" />
+    <Content Include="librerias\flags\4x3\cz.svg" />
+    <Content Include="librerias\flags\4x3\de.svg" />
+    <Content Include="librerias\flags\4x3\dj.svg" />
+    <Content Include="librerias\flags\4x3\dk.svg" />
+    <Content Include="librerias\flags\4x3\dm.svg" />
+    <Content Include="librerias\flags\4x3\do.svg" />
+    <Content Include="librerias\flags\4x3\dz.svg" />
+    <Content Include="librerias\flags\4x3\ec.svg" />
+    <Content Include="librerias\flags\4x3\ee.svg" />
+    <Content Include="librerias\flags\4x3\eg.svg" />
+    <Content Include="librerias\flags\4x3\eh.svg" />
+    <Content Include="librerias\flags\4x3\er.svg" />
+    <Content Include="librerias\flags\4x3\es-ct.svg" />
+    <Content Include="librerias\flags\4x3\es.svg" />
+    <Content Include="librerias\flags\4x3\et.svg" />
+    <Content Include="librerias\flags\4x3\eu.svg" />
+    <Content Include="librerias\flags\4x3\fi.svg" />
+    <Content Include="librerias\flags\4x3\fj.svg" />
+    <Content Include="librerias\flags\4x3\fk.svg" />
+    <Content Include="librerias\flags\4x3\fm.svg" />
+    <Content Include="librerias\flags\4x3\fo.svg" />
+    <Content Include="librerias\flags\4x3\fr.svg" />
+    <Content Include="librerias\flags\4x3\ga.svg" />
+    <Content Include="librerias\flags\4x3\gb-eng.svg" />
+    <Content Include="librerias\flags\4x3\gb-nir.svg" />
+    <Content Include="librerias\flags\4x3\gb-sct.svg" />
+    <Content Include="librerias\flags\4x3\gb-wls.svg" />
+    <Content Include="librerias\flags\4x3\gb.svg" />
+    <Content Include="librerias\flags\4x3\gd.svg" />
+    <Content Include="librerias\flags\4x3\ge.svg" />
+    <Content Include="librerias\flags\4x3\gf.svg" />
+    <Content Include="librerias\flags\4x3\gg.svg" />
+    <Content Include="librerias\flags\4x3\gh.svg" />
+    <Content Include="librerias\flags\4x3\gi.svg" />
+    <Content Include="librerias\flags\4x3\gl.svg" />
+    <Content Include="librerias\flags\4x3\gm.svg" />
+    <Content Include="librerias\flags\4x3\gn.svg" />
+    <Content Include="librerias\flags\4x3\gp.svg" />
+    <Content Include="librerias\flags\4x3\gq.svg" />
+    <Content Include="librerias\flags\4x3\gr.svg" />
+    <Content Include="librerias\flags\4x3\gs.svg" />
+    <Content Include="librerias\flags\4x3\gt.svg" />
+    <Content Include="librerias\flags\4x3\gu.svg" />
+    <Content Include="librerias\flags\4x3\gw.svg" />
+    <Content Include="librerias\flags\4x3\gy.svg" />
+    <Content Include="librerias\flags\4x3\hk.svg" />
+    <Content Include="librerias\flags\4x3\hm.svg" />
+    <Content Include="librerias\flags\4x3\hn.svg" />
+    <Content Include="librerias\flags\4x3\hr.svg" />
+    <Content Include="librerias\flags\4x3\ht.svg" />
+    <Content Include="librerias\flags\4x3\hu.svg" />
+    <Content Include="librerias\flags\4x3\id.svg" />
+    <Content Include="librerias\flags\4x3\ie.svg" />
+    <Content Include="librerias\flags\4x3\il.svg" />
+    <Content Include="librerias\flags\4x3\im.svg" />
+    <Content Include="librerias\flags\4x3\in.svg" />
+    <Content Include="librerias\flags\4x3\io.svg" />
+    <Content Include="librerias\flags\4x3\iq.svg" />
+    <Content Include="librerias\flags\4x3\ir.svg" />
+    <Content Include="librerias\flags\4x3\is.svg" />
+    <Content Include="librerias\flags\4x3\it.svg" />
+    <Content Include="librerias\flags\4x3\je.svg" />
+    <Content Include="librerias\flags\4x3\jm.svg" />
+    <Content Include="librerias\flags\4x3\jo.svg" />
+    <Content Include="librerias\flags\4x3\jp.svg" />
+    <Content Include="librerias\flags\4x3\ke.svg" />
+    <Content Include="librerias\flags\4x3\kg.svg" />
+    <Content Include="librerias\flags\4x3\kh.svg" />
+    <Content Include="librerias\flags\4x3\ki.svg" />
+    <Content Include="librerias\flags\4x3\km.svg" />
+    <Content Include="librerias\flags\4x3\kn.svg" />
+    <Content Include="librerias\flags\4x3\kp.svg" />
+    <Content Include="librerias\flags\4x3\kr.svg" />
+    <Content Include="librerias\flags\4x3\kw.svg" />
+    <Content Include="librerias\flags\4x3\ky.svg" />
+    <Content Include="librerias\flags\4x3\kz.svg" />
+    <Content Include="librerias\flags\4x3\la.svg" />
+    <Content Include="librerias\flags\4x3\lb.svg" />
+    <Content Include="librerias\flags\4x3\lc.svg" />
+    <Content Include="librerias\flags\4x3\li.svg" />
+    <Content Include="librerias\flags\4x3\lk.svg" />
+    <Content Include="librerias\flags\4x3\lr.svg" />
+    <Content Include="librerias\flags\4x3\ls.svg" />
+    <Content Include="librerias\flags\4x3\lt.svg" />
+    <Content Include="librerias\flags\4x3\lu.svg" />
+    <Content Include="librerias\flags\4x3\lv.svg" />
+    <Content Include="librerias\flags\4x3\ly.svg" />
+    <Content Include="librerias\flags\4x3\ma.svg" />
+    <Content Include="librerias\flags\4x3\mc.svg" />
+    <Content Include="librerias\flags\4x3\md.svg" />
+    <Content Include="librerias\flags\4x3\me.svg" />
+    <Content Include="librerias\flags\4x3\mf.svg" />
+    <Content Include="librerias\flags\4x3\mg.svg" />
+    <Content Include="librerias\flags\4x3\mh.svg" />
+    <Content Include="librerias\flags\4x3\mk.svg" />
+    <Content Include="librerias\flags\4x3\ml.svg" />
+    <Content Include="librerias\flags\4x3\mm.svg" />
+    <Content Include="librerias\flags\4x3\mn.svg" />
+    <Content Include="librerias\flags\4x3\mo.svg" />
+    <Content Include="librerias\flags\4x3\mp.svg" />
+    <Content Include="librerias\flags\4x3\mq.svg" />
+    <Content Include="librerias\flags\4x3\mr.svg" />
+    <Content Include="librerias\flags\4x3\ms.svg" />
+    <Content Include="librerias\flags\4x3\mt.svg" />
+    <Content Include="librerias\flags\4x3\mu.svg" />
+    <Content Include="librerias\flags\4x3\mv.svg" />
+    <Content Include="librerias\flags\4x3\mw.svg" />
+    <Content Include="librerias\flags\4x3\mx.svg" />
+    <Content Include="librerias\flags\4x3\my.svg" />
+    <Content Include="librerias\flags\4x3\mz.svg" />
+    <Content Include="librerias\flags\4x3\na.svg" />
+    <Content Include="librerias\flags\4x3\nc.svg" />
+    <Content Include="librerias\flags\4x3\ne.svg" />
+    <Content Include="librerias\flags\4x3\nf.svg" />
+    <Content Include="librerias\flags\4x3\ng.svg" />
+    <Content Include="librerias\flags\4x3\ni.svg" />
+    <Content Include="librerias\flags\4x3\nl.svg" />
+    <Content Include="librerias\flags\4x3\no.svg" />
+    <Content Include="librerias\flags\4x3\np.svg" />
+    <Content Include="librerias\flags\4x3\nr.svg" />
+    <Content Include="librerias\flags\4x3\nu.svg" />
+    <Content Include="librerias\flags\4x3\nz.svg" />
+    <Content Include="librerias\flags\4x3\om.svg" />
+    <Content Include="librerias\flags\4x3\pa.svg" />
+    <Content Include="librerias\flags\4x3\pe.svg" />
+    <Content Include="librerias\flags\4x3\pf.svg" />
+    <Content Include="librerias\flags\4x3\pg.svg" />
+    <Content Include="librerias\flags\4x3\ph.svg" />
+    <Content Include="librerias\flags\4x3\pk.svg" />
+    <Content Include="librerias\flags\4x3\pl.svg" />
+    <Content Include="librerias\flags\4x3\pm.svg" />
+    <Content Include="librerias\flags\4x3\pn.svg" />
+    <Content Include="librerias\flags\4x3\pr.svg" />
+    <Content Include="librerias\flags\4x3\ps.svg" />
+    <Content Include="librerias\flags\4x3\pt.svg" />
+    <Content Include="librerias\flags\4x3\pw.svg" />
+    <Content Include="librerias\flags\4x3\py.svg" />
+    <Content Include="librerias\flags\4x3\qa.svg" />
+    <Content Include="librerias\flags\4x3\re.svg" />
+    <Content Include="librerias\flags\4x3\ro.svg" />
+    <Content Include="librerias\flags\4x3\rs.svg" />
+    <Content Include="librerias\flags\4x3\ru.svg" />
+    <Content Include="librerias\flags\4x3\rw.svg" />
+    <Content Include="librerias\flags\4x3\sa.svg" />
+    <Content Include="librerias\flags\4x3\sb.svg" />
+    <Content Include="librerias\flags\4x3\sc.svg" />
+    <Content Include="librerias\flags\4x3\sd.svg" />
+    <Content Include="librerias\flags\4x3\se.svg" />
+    <Content Include="librerias\flags\4x3\sg.svg" />
+    <Content Include="librerias\flags\4x3\sh.svg" />
+    <Content Include="librerias\flags\4x3\si.svg" />
+    <Content Include="librerias\flags\4x3\sj.svg" />
+    <Content Include="librerias\flags\4x3\sk.svg" />
+    <Content Include="librerias\flags\4x3\sl.svg" />
+    <Content Include="librerias\flags\4x3\sm.svg" />
+    <Content Include="librerias\flags\4x3\sn.svg" />
+    <Content Include="librerias\flags\4x3\so.svg" />
+    <Content Include="librerias\flags\4x3\sr.svg" />
+    <Content Include="librerias\flags\4x3\ss.svg" />
+    <Content Include="librerias\flags\4x3\st.svg" />
+    <Content Include="librerias\flags\4x3\sv.svg" />
+    <Content Include="librerias\flags\4x3\sx.svg" />
+    <Content Include="librerias\flags\4x3\sy.svg" />
+    <Content Include="librerias\flags\4x3\sz.svg" />
+    <Content Include="librerias\flags\4x3\tc.svg" />
+    <Content Include="librerias\flags\4x3\td.svg" />
+    <Content Include="librerias\flags\4x3\tf.svg" />
+    <Content Include="librerias\flags\4x3\tg.svg" />
+    <Content Include="librerias\flags\4x3\th.svg" />
+    <Content Include="librerias\flags\4x3\tj.svg" />
+    <Content Include="librerias\flags\4x3\tk.svg" />
+    <Content Include="librerias\flags\4x3\tl.svg" />
+    <Content Include="librerias\flags\4x3\tm.svg" />
+    <Content Include="librerias\flags\4x3\tn.svg" />
+    <Content Include="librerias\flags\4x3\to.svg" />
+    <Content Include="librerias\flags\4x3\tr.svg" />
+    <Content Include="librerias\flags\4x3\tt.svg" />
+    <Content Include="librerias\flags\4x3\tv.svg" />
+    <Content Include="librerias\flags\4x3\tw.svg" />
+    <Content Include="librerias\flags\4x3\tz.svg" />
+    <Content Include="librerias\flags\4x3\ua.svg" />
+    <Content Include="librerias\flags\4x3\ug.svg" />
+    <Content Include="librerias\flags\4x3\um.svg" />
+    <Content Include="librerias\flags\4x3\un.svg" />
+    <Content Include="librerias\flags\4x3\us.svg" />
+    <Content Include="librerias\flags\4x3\uy.svg" />
+    <Content Include="librerias\flags\4x3\uz.svg" />
+    <Content Include="librerias\flags\4x3\va.svg" />
+    <Content Include="librerias\flags\4x3\vc.svg" />
+    <Content Include="librerias\flags\4x3\ve.svg" />
+    <Content Include="librerias\flags\4x3\vg.svg" />
+    <Content Include="librerias\flags\4x3\vi.svg" />
+    <Content Include="librerias\flags\4x3\vn.svg" />
+    <Content Include="librerias\flags\4x3\vu.svg" />
+    <Content Include="librerias\flags\4x3\wf.svg" />
+    <Content Include="librerias\flags\4x3\ws.svg" />
+    <Content Include="librerias\flags\4x3\ye.svg" />
+    <Content Include="librerias\flags\4x3\yt.svg" />
+    <Content Include="librerias\flags\4x3\za.svg" />
+    <Content Include="librerias\flags\4x3\zm.svg" />
+    <Content Include="librerias\flags\4x3\zw.svg" />
+    <Content Include="librerias\fonts\boxicons.svg" />
+    <Content Include="librerias\fonts\LineIcons.svg" />
+    <Content Include="librerias\images\avatars\avatar-1.png" />
+    <Content Include="librerias\images\avatars\avatar-10.png" />
+    <Content Include="librerias\images\avatars\avatar-11.png" />
+    <Content Include="librerias\images\avatars\avatar-12.png" />
+    <Content Include="librerias\images\avatars\avatar-13.png" />
+    <Content Include="librerias\images\avatars\avatar-14.png" />
+    <Content Include="librerias\images\avatars\avatar-15.png" />
+    <Content Include="librerias\images\avatars\avatar-16.png" />
+    <Content Include="librerias\images\avatars\avatar-17.png" />
+    <Content Include="librerias\images\avatars\avatar-18.png" />
+    <Content Include="librerias\images\avatars\avatar-19.png" />
+    <Content Include="librerias\images\avatars\avatar-2.png" />
+    <Content Include="librerias\images\avatars\avatar-20.png" />
+    <Content Include="librerias\images\avatars\avatar-21.png" />
+    <Content Include="librerias\images\avatars\avatar-22.png" />
+    <Content Include="librerias\images\avatars\avatar-23.png" />
+    <Content Include="librerias\images\avatars\avatar-24.png" />
+    <Content Include="librerias\images\avatars\avatar-25.png" />
+    <Content Include="librerias\images\avatars\avatar-3.png" />
+    <Content Include="librerias\images\avatars\avatar-4.png" />
+    <Content Include="librerias\images\avatars\avatar-5.png" />
+    <Content Include="librerias\images\avatars\avatar-6.png" />
+    <Content Include="librerias\images\avatars\avatar-7.png" />
+    <Content Include="librerias\images\avatars\avatar-8.png" />
+    <Content Include="librerias\images\avatars\avatar-9.png" />
+    <Content Include="librerias\images\bg-themes\1.png" />
+    <Content Include="librerias\images\bg-themes\2.png" />
+    <Content Include="librerias\images\bg-themes\3.png" />
+    <Content Include="librerias\images\bg-themes\4.png" />
+    <Content Include="librerias\images\bg-themes\5.png" />
+    <Content Include="librerias\images\bg-themes\6.png" />
+    <Content Include="librerias\images\bg-themes\7.png" />
+    <Content Include="librerias\images\bg-themes\8.png" />
+    <Content Include="librerias\images\errors-images\404-error.png" />
+    <Content Include="librerias\images\errors-images\505-error.png" />
+    <Content Include="librerias\images\favicon-32x32.png" />
+    <Content Include="librerias\images\gallery\01.png" />
+    <Content Include="librerias\images\gallery\02.png" />
+    <Content Include="librerias\images\gallery\03.png" />
+    <Content Include="librerias\images\gallery\04.png" />
+    <Content Include="librerias\images\gallery\05.png" />
+    <Content Include="librerias\images\gallery\06.png" />
+    <Content Include="librerias\images\gallery\07.png" />
+    <Content Include="librerias\images\gallery\08.png" />
+    <Content Include="librerias\images\gallery\09.png" />
+    <Content Include="librerias\images\gallery\10.png" />
+    <Content Include="librerias\images\gallery\11.png" />
+    <Content Include="librerias\images\gallery\12.png" />
+    <Content Include="librerias\images\gallery\13.png" />
+    <Content Include="librerias\images\gallery\14.png" />
+    <Content Include="librerias\images\gallery\15.png" />
+    <Content Include="librerias\images\gallery\16.png" />
+    <Content Include="librerias\images\gallery\17.png" />
+    <Content Include="librerias\images\gallery\18.png" />
+    <Content Include="librerias\images\gallery\19.png" />
+    <Content Include="librerias\images\gallery\20.png" />
+    <Content Include="librerias\images\gallery\21.png" />
+    <Content Include="librerias\images\gallery\22.png" />
+    <Content Include="librerias\images\gallery\23.png" />
+    <Content Include="librerias\images\gallery\24.png" />
+    <Content Include="librerias\images\gallery\25.png" />
+    <Content Include="librerias\images\gallery\26.png" />
+    <Content Include="librerias\images\gallery\27.png" />
+    <Content Include="librerias\images\gallery\28.png" />
+    <Content Include="librerias\images\gallery\29.png" />
+    <Content Include="librerias\images\gallery\30.png" />
+    <Content Include="librerias\images\gallery\31.png" />
+    <Content Include="librerias\images\gallery\32.png" />
+    <Content Include="librerias\images\gallery\33.png" />
+    <Content Include="librerias\images\gallery\34.png" />
+    <Content Include="librerias\images\icons\chair.png" />
+    <Content Include="librerias\images\icons\chair.svg" />
+    <Content Include="librerias\images\icons\forgot-2.png" />
+    <Content Include="librerias\images\icons\headphones.png" />
+    <Content Include="librerias\images\icons\idea.png" />
+    <Content Include="librerias\images\icons\search.svg" />
+    <Content Include="librerias\images\icons\shoes.png" />
+    <Content Include="librerias\images\icons\tshirt.png" />
+    <Content Include="librerias\images\icons\user-interface.png" />
+    <Content Include="librerias\images\icons\user.png" />
+    <Content Include="librerias\images\icons\watch.png" />
+    <Content Include="librerias\images\login-images\bg-forgot-password.jpg" />
+    <Content Include="librerias\images\login-images\bg-lock-screen.jpg" />
+    <Content Include="librerias\images\login-images\bg-login-img.jpg" />
+    <Content Include="librerias\images\login-images\forgot-password-frent-img.jpg" />
+    <Content Include="librerias\images\logo-icon.png" />
+    <Content Include="librerias\images\logo-img.png" />
+    <Content Include="librerias\images\products\01.png" />
+    <Content Include="librerias\images\products\02.png" />
+    <Content Include="librerias\images\products\03.png" />
+    <Content Include="librerias\images\products\04.png" />
+    <Content Include="librerias\images\products\05.png" />
+    <Content Include="librerias\images\products\06.png" />
+    <Content Include="librerias\images\products\07.png" />
+    <Content Include="librerias\images\products\08.png" />
+    <Content Include="librerias\images\products\09.png" />
+    <Content Include="librerias\images\products\10.png" />
+    <Content Include="librerias\images\products\11.png" />
+    <Content Include="librerias\images\products\12.png" />
+    <Content Include="librerias\images\products\13.png" />
+    <Content Include="librerias\images\products\14.png" />
+    <Content Include="librerias\images\products\15.png" />
+    <Content Include="librerias\images\products\16.png" />
+    <Content Include="librerias\images\products\17.png" />
+    <Content Include="librerias\images\products\18.png" />
+    <Content Include="librerias\images\products\19.png" />
+    <Content Include="librerias\js\add-new-product-image-upload.js" />
+    <Content Include="librerias\js\app-chat-box.js" />
+    <Content Include="librerias\js\app-emailbox.js" />
+    <Content Include="librerias\js\app-emailread.js" />
+    <Content Include="librerias\js\app-fullcalendar.js" />
+    <Content Include="librerias\js\app-to-do.js" />
+    <Content Include="librerias\js\app.js" />
+    <Content Include="librerias\js\bootstrap.bundle.min.js" />
+    <Content Include="librerias\js\form-date-time-pickes.js" />
+    <Content Include="librerias\js\form-file-upload.js" />
+    <Content Include="librerias\js\form-select2.js" />
+    <Content Include="librerias\js\form-text-editor.js" />
+    <Content Include="librerias\js\form-validations.js" />
+    <Content Include="librerias\js\form-wizard.js" />
+    <Content Include="librerias\js\index.js" />
+    <Content Include="librerias\js\index2.js" />
+    <Content Include="librerias\js\jquery.min.js" />
+    <Content Include="librerias\js\pace.min.js" />
+    <Content Include="librerias\js\popover-tooltip.js" />
+    <Content Include="librerias\js\show-hide-password.js" />
+    <Content Include="librerias\js\table-datatable.js" />
+    <Content Include="librerias\js\widgets.js" />
+    <Content Include="librerias\plugins\apexcharts-bundle\css\apexcharts.css" />
+    <Content Include="librerias\plugins\apexcharts-bundle\js\apex-custom.js" />
+    <Content Include="librerias\plugins\apexcharts-bundle\js\apexcharts.js" />
+    <Content Include="librerias\plugins\apexcharts-bundle\js\apexcharts.min.js" />
+    <Content Include="librerias\plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.min.css" />
+    <Content Include="librerias\plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.min.js" />
+    <Content Include="librerias\plugins\bootstrap-material-datetimepicker\js\moment.min.js" />
+    <Content Include="librerias\plugins\chartjs\js\Chart.min.js" />
+    <Content Include="librerias\plugins\chartjs\js\chartjs-custom.js" />
+    <Content Include="librerias\plugins\datatable\css\dataTables.bootstrap5.min.css" />
+    <Content Include="librerias\plugins\datatable\js\dataTables.bootstrap5.min.js" />
+    <Content Include="librerias\plugins\datatable\js\jquery.dataTables.min.js" />
+    <Content Include="librerias\plugins\datetimepicker\css\classic.css" />
+    <Content Include="librerias\plugins\datetimepicker\css\classic.date.css" />
+    <Content Include="librerias\plugins\datetimepicker\css\classic.time.css" />
+    <Content Include="librerias\plugins\datetimepicker\js\legacy.js" />
+    <Content Include="librerias\plugins\datetimepicker\js\picker.date.js" />
+    <Content Include="librerias\plugins\datetimepicker\js\picker.js" />
+    <Content Include="librerias\plugins\datetimepicker\js\picker.time.js" />
+    <Content Include="librerias\plugins\Drag-And-Drop\dist\imageuploadify.min.css" />
+    <Content Include="librerias\plugins\Drag-And-Drop\dist\imageuploadify.min.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\cors\jquery.postmessage-transport.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\cors\jquery.xdr-transport.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_fileupload.css" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_microphone.png" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_okay.png" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_remove.png" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_upload.png" />
+    <Content Include="librerias\plugins\fancy-file-uploader\fancy_webcam.png" />
+    <Content Include="librerias\plugins\fancy-file-uploader\jquery.fancy-fileupload.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\jquery.fileupload.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\jquery.iframe-transport.js" />
+    <Content Include="librerias\plugins\fancy-file-uploader\jquery.ui.widget.js" />
+    <Content Include="librerias\plugins\fullcalendar\css\main.css" />
+    <Content Include="librerias\plugins\fullcalendar\css\main.min.css" />
+    <Content Include="librerias\plugins\fullcalendar\js\main.js" />
+    <Content Include="librerias\plugins\fullcalendar\js\main.min.js" />
+    <Content Include="librerias\plugins\gmaps\map-custom-script.js" />
+    <Content Include="librerias\plugins\highcharts\css\dark-unica.css" />
+    <Content Include="librerias\plugins\highcharts\css\grid-light.css" />
+    <Content Include="librerias\plugins\highcharts\css\highcharts-white.css" />
+    <Content Include="librerias\plugins\highcharts\css\highcharts.css" />
+    <Content Include="librerias\plugins\highcharts\css\sand-signika.css" />
+    <Content Include="librerias\plugins\highcharts\js\accessibility.js" />
+    <Content Include="librerias\plugins\highcharts\js\cylinder.js" />
+    <Content Include="librerias\plugins\highcharts\js\export-data.js" />
+    <Content Include="librerias\plugins\highcharts\js\exporting.js" />
+    <Content Include="librerias\plugins\highcharts\js\funnel3d.js" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts-3d.js" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts-custom.script.js" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts-more.js" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts.js" />
+    <Content Include="librerias\plugins\highcharts\js\solid-gauge.js" />
+    <Content Include="librerias\plugins\highcharts\js\variable-pie.js" />
+    <Content Include="librerias\plugins\input-tags\css\tagsinput.css" />
+    <Content Include="librerias\plugins\input-tags\js\tagsinput.js" />
+    <Content Include="librerias\plugins\metismenu\css\metisMenu.min.css" />
+    <Content Include="librerias\plugins\metismenu\js\metisMenu.min.js" />
+    <Content Include="librerias\plugins\notifications\css\lobibox.css" />
+    <Content Include="librerias\plugins\notifications\css\lobibox.min.css" />
+    <Content Include="librerias\plugins\notifications\img\1.jpg" />
+    <Content Include="librerias\plugins\notifications\img\2.jpg" />
+    <Content Include="librerias\plugins\notifications\img\3.jpg" />
+    <Content Include="librerias\plugins\notifications\img\4.jpg" />
+    <Content Include="librerias\plugins\notifications\img\5.jpg" />
+    <Content Include="librerias\plugins\notifications\img\6.jpg" />
+    <Content Include="librerias\plugins\notifications\js\lobibox.js" />
+    <Content Include="librerias\plugins\notifications\js\lobibox.min.js" />
+    <Content Include="librerias\plugins\notifications\js\messageboxes.js" />
+    <Content Include="librerias\plugins\notifications\js\messageboxes.min.js" />
+    <Content Include="librerias\plugins\notifications\js\notification-custom-script.js" />
+    <Content Include="librerias\plugins\notifications\js\notifications.js" />
+    <Content Include="librerias\plugins\notifications\js\notifications.min.js" />
+    <Content Include="librerias\plugins\notifications\sounds\sound1.ogg" />
+    <Content Include="librerias\plugins\notifications\sounds\sound2.ogg" />
+    <Content Include="librerias\plugins\notifications\sounds\sound3.ogg" />
+    <Content Include="librerias\plugins\notifications\sounds\sound4.ogg" />
+    <Content Include="librerias\plugins\notifications\sounds\sound5.ogg" />
+    <Content Include="librerias\plugins\notifications\sounds\sound6.ogg" />
+    <Content Include="librerias\plugins\perfect-scrollbar\css\perfect-scrollbar.css" />
+    <Content Include="librerias\plugins\perfect-scrollbar\js\perfect-scrollbar.js" />
+    <Content Include="librerias\plugins\select2\css\select2-bootstrap4.css" />
+    <Content Include="librerias\plugins\select2\css\select2.min.css" />
+    <Content Include="librerias\plugins\select2\js\select2.min.js" />
+    <Content Include="librerias\plugins\simplebar\css\simplebar.css" />
+    <Content Include="librerias\plugins\simplebar\js\simplebar.min.js" />
+    <Content Include="librerias\plugins\smart-wizard\css\smart_wizard_all.min.css" />
+    <Content Include="librerias\plugins\smart-wizard\js\jquery.smartWizard.min.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="librerias\plugins\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="librerias\plugins\vectormap\jvectormap.custom.js" />
+    <Content Include="authentication\signin.aspx" />
+    <Content Include="authentication\signup.aspx" />
+    <Content Include="map-google-maps.aspx" />
+    <Content Include="map-vector-maps.aspx" />
+    <Content Include="pricing-table.aspx" />
+    <Content Include="table-basic-table.aspx" />
+    <Content Include="table-datatable.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="timeline.aspx" />
+    <Content Include="user-profile.aspx" />
+    <Content Include="widgets.aspx" />
+    <Content Include="widgets.html" />
+    <Content Include="Service.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app-chat-box.aspx.cs">
+      <DependentUpon>app-chat-box.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-chat-box.aspx.designer.cs">
+      <DependentUpon>app-chat-box.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-contact-list.aspx.cs">
+      <DependentUpon>app-contact-list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-contact-list.aspx.designer.cs">
+      <DependentUpon>app-contact-list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-emailbox.aspx.cs">
+      <DependentUpon>app-emailbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-emailbox.aspx.designer.cs">
+      <DependentUpon>app-emailbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-emailread.aspx.cs">
+      <DependentUpon>app-emailread.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-emailread.aspx.designer.cs">
+      <DependentUpon>app-emailread.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-file-manager.aspx.cs">
+      <DependentUpon>app-file-manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-file-manager.aspx.designer.cs">
+      <DependentUpon>app-file-manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-fullcalendar.aspx.cs">
+      <DependentUpon>app-fullcalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-fullcalendar.aspx.designer.cs">
+      <DependentUpon>app-fullcalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-invoice.aspx.cs">
+      <DependentUpon>app-invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-invoice.aspx.designer.cs">
+      <DependentUpon>app-invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app-to-do.aspx.cs">
+      <DependentUpon>app-to-do.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app-to-do.aspx.designer.cs">
+      <DependentUpon>app-to-do.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="authentication\forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="authentication\forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="authentication\lock-screen.aspx.cs">
+      <DependentUpon>lock-screen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="authentication\lock-screen.aspx.designer.cs">
+      <DependentUpon>lock-screen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="authentication\reset-password.aspx.cs">
+      <DependentUpon>reset-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="authentication\reset-password.aspx.designer.cs">
+      <DependentUpon>reset-password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="charts-apex-chart.aspx.cs">
+      <DependentUpon>charts-apex-chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="charts-apex-chart.aspx.designer.cs">
+      <DependentUpon>charts-apex-chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="charts-chartjs.aspx.cs">
+      <DependentUpon>charts-chartjs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="charts-chartjs.aspx.designer.cs">
+      <DependentUpon>charts-chartjs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="charts-highcharts.aspx.cs">
+      <DependentUpon>charts-highcharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="charts-highcharts.aspx.designer.cs">
+      <DependentUpon>charts-highcharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-accordions.aspx.cs">
+      <DependentUpon>component-accordions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-accordions.aspx.designer.cs">
+      <DependentUpon>component-accordions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-alerts.aspx.cs">
+      <DependentUpon>component-alerts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-alerts.aspx.designer.cs">
+      <DependentUpon>component-alerts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-avtars-chips.aspx.cs">
+      <DependentUpon>component-avtars-chips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-avtars-chips.aspx.designer.cs">
+      <DependentUpon>component-avtars-chips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-badges.aspx.cs">
+      <DependentUpon>component-badges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-badges.aspx.designer.cs">
+      <DependentUpon>component-badges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-buttons.aspx.cs">
+      <DependentUpon>component-buttons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-buttons.aspx.designer.cs">
+      <DependentUpon>component-buttons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-cards.aspx.cs">
+      <DependentUpon>component-cards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-cards.aspx.designer.cs">
+      <DependentUpon>component-cards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-carousels.aspx.cs">
+      <DependentUpon>component-carousels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-carousels.aspx.designer.cs">
+      <DependentUpon>component-carousels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-list-groups.aspx.cs">
+      <DependentUpon>component-list-groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-list-groups.aspx.designer.cs">
+      <DependentUpon>component-list-groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-media-object.aspx.cs">
+      <DependentUpon>component-media-object.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-media-object.aspx.designer.cs">
+      <DependentUpon>component-media-object.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-modals.aspx.cs">
+      <DependentUpon>component-modals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-modals.aspx.designer.cs">
+      <DependentUpon>component-modals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-navbar.aspx.cs">
+      <DependentUpon>component-navbar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-navbar.aspx.designer.cs">
+      <DependentUpon>component-navbar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-navs-tabs.aspx.cs">
+      <DependentUpon>component-navs-tabs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-navs-tabs.aspx.designer.cs">
+      <DependentUpon>component-navs-tabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-notifications.aspx.cs">
+      <DependentUpon>component-notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-notifications.aspx.designer.cs">
+      <DependentUpon>component-notifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-paginations.aspx.cs">
+      <DependentUpon>component-paginations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-paginations.aspx.designer.cs">
+      <DependentUpon>component-paginations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-popovers-tooltips.aspx.cs">
+      <DependentUpon>component-popovers-tooltips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-popovers-tooltips.aspx.designer.cs">
+      <DependentUpon>component-popovers-tooltips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-progress-bars.aspx.cs">
+      <DependentUpon>component-progress-bars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-progress-bars.aspx.designer.cs">
+      <DependentUpon>component-progress-bars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="component-spinners.aspx.cs">
+      <DependentUpon>component-spinners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="component-spinners.aspx.designer.cs">
+      <DependentUpon>component-spinners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content-grid-system.aspx.cs">
+      <DependentUpon>content-grid-system.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content-grid-system.aspx.designer.cs">
+      <DependentUpon>content-grid-system.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content-text-utilities.aspx.cs">
+      <DependentUpon>content-text-utilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content-text-utilities.aspx.designer.cs">
+      <DependentUpon>content-text-utilities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content-typography.aspx.cs">
+      <DependentUpon>content-typography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content-typography.aspx.designer.cs">
+      <DependentUpon>content-typography.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce-add-new-products.aspx.cs">
+      <DependentUpon>ecommerce-add-new-products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce-add-new-products.aspx.designer.cs">
+      <DependentUpon>ecommerce-add-new-products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce-orders.aspx.cs">
+      <DependentUpon>ecommerce-orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce-orders.aspx.designer.cs">
+      <DependentUpon>ecommerce-orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce-products-details.aspx.cs">
+      <DependentUpon>ecommerce-products-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce-products-details.aspx.designer.cs">
+      <DependentUpon>ecommerce-products-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce-products.aspx.cs">
+      <DependentUpon>ecommerce-products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce-products.aspx.designer.cs">
+      <DependentUpon>ecommerce-products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error-blank-page.aspx.cs">
+      <DependentUpon>error-blank-page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error-blank-page.aspx.designer.cs">
+      <DependentUpon>error-blank-page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errors-404-error.aspx.cs">
+      <DependentUpon>errors-404-error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errors-404-error.aspx.designer.cs">
+      <DependentUpon>errors-404-error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errors-500-error.aspx.cs">
+      <DependentUpon>errors-500-error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errors-500-error.aspx.designer.cs">
+      <DependentUpon>errors-500-error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errors-coming-soon.aspx.cs">
+      <DependentUpon>errors-coming-soon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errors-coming-soon.aspx.designer.cs">
+      <DependentUpon>errors-coming-soon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-date-time-pickes.aspx.cs">
+      <DependentUpon>form-date-time-pickes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-date-time-pickes.aspx.designer.cs">
+      <DependentUpon>form-date-time-pickes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-elements.aspx.cs">
+      <DependentUpon>form-elements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-elements.aspx.designer.cs">
+      <DependentUpon>form-elements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-file-upload.aspx.cs">
+      <DependentUpon>form-file-upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-file-upload.aspx.designer.cs">
+      <DependentUpon>form-file-upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-input-group.aspx.cs">
+      <DependentUpon>form-input-group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-input-group.aspx.designer.cs">
+      <DependentUpon>form-input-group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-layouts.aspx.cs">
+      <DependentUpon>form-layouts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-layouts.aspx.designer.cs">
+      <DependentUpon>form-layouts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-select2.aspx.cs">
+      <DependentUpon>form-select2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-select2.aspx.designer.cs">
+      <DependentUpon>form-select2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-text-editor.aspx.cs">
+      <DependentUpon>form-text-editor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-text-editor.aspx.designer.cs">
+      <DependentUpon>form-text-editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-validations.aspx.cs">
+      <DependentUpon>form-validations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-validations.aspx.designer.cs">
+      <DependentUpon>form-validations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form-wizard.aspx.cs">
+      <DependentUpon>form-wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form-wizard.aspx.designer.cs">
+      <DependentUpon>form-wizard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="icons-boxicons.aspx.cs">
+      <DependentUpon>icons-boxicons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="icons-boxicons.aspx.designer.cs">
+      <DependentUpon>icons-boxicons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="icons-feather-icons.aspx.cs">
+      <DependentUpon>icons-feather-icons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="icons-feather-icons.aspx.designer.cs">
+      <DependentUpon>icons-feather-icons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="icons-line-icons.aspx.cs">
+      <DependentUpon>icons-line-icons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="icons-line-icons.aspx.designer.cs">
+      <DependentUpon>icons-line-icons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index2.aspx.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index2.aspx.designer.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IService.cs" />
+    <Compile Include="authentication\signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="authentication\signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="authentication\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="authentication\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="map-google-maps.aspx.cs">
+      <DependentUpon>map-google-maps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="map-google-maps.aspx.designer.cs">
+      <DependentUpon>map-google-maps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="map-vector-maps.aspx.cs">
+      <DependentUpon>map-vector-maps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="map-vector-maps.aspx.designer.cs">
+      <DependentUpon>map-vector-maps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pricing-table.aspx.cs">
+      <DependentUpon>pricing-table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pricing-table.aspx.designer.cs">
+      <DependentUpon>pricing-table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.svc.cs">
+      <DependentUpon>Service.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SiteIN.Master.cs">
+      <DependentUpon>SiteIN.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteIN.Master.designer.cs">
+      <DependentUpon>SiteIN.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteOUT.Master.cs">
+      <DependentUpon>SiteOUT.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteOUT.Master.designer.cs">
+      <DependentUpon>SiteOUT.Master</DependentUpon>
+    </Compile>
+    <Compile Include="table-basic-table.aspx.cs">
+      <DependentUpon>table-basic-table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="table-basic-table.aspx.designer.cs">
+      <DependentUpon>table-basic-table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="table-datatable.aspx.cs">
+      <DependentUpon>table-datatable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="table-datatable.aspx.designer.cs">
+      <DependentUpon>table-datatable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="timeline.aspx.cs">
+      <DependentUpon>timeline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="timeline.aspx.designer.cs">
+      <DependentUpon>timeline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user-profile.aspx.cs">
+      <DependentUpon>user-profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user-profile.aspx.designer.cs">
+      <DependentUpon>user-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="widgets.aspx.cs">
+      <DependentUpon>widgets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="widgets.aspx.designer.cs">
+      <DependentUpon>widgets.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="librerias\css\bootstrap.min.css.map" />
+    <Content Include="librerias\fonts\boxicons.eot" />
+    <Content Include="librerias\fonts\boxicons.ttf" />
+    <Content Include="librerias\fonts\boxicons.woff" />
+    <Content Include="librerias\fonts\boxicons.woff2" />
+    <Content Include="librerias\fonts\LineIcons.eot" />
+    <Content Include="librerias\fonts\LineIcons.ttf" />
+    <Content Include="librerias\fonts\LineIcons.woff" />
+    <Content Include="librerias\fonts\LineIcons.woff2" />
+    <Content Include="librerias\js\bootstrap.bundle.min.js.map" />
+    <Content Include="librerias\plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.min.css.map" />
+    <Content Include="librerias\plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.min.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\accessibility.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\cylinder.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\export-data.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\exporting.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\funnel3d.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts-3d.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts-more.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\highcharts.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\solid-gauge.js.map" />
+    <Content Include="librerias\plugins\highcharts\js\variable-pie.js.map" />
+    <Content Include="librerias\plugins\metismenu\css\metisMenu.min.css.map" />
+    <Content Include="librerias\plugins\metismenu\js\metisMenu.min.js.map" />
+    <None Include="packages.config" />
+    <Content Include="SiteIN.Master" />
+    <Content Include="SiteOUT.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
